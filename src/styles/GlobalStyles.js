@@ -17,6 +17,7 @@ export default createGlobalStyle`
     -moz-background-size: cover;
     -o-background-size: cover;
      background-size: cover;
+     background-attachment: fixed;
   }
 
   html, border-style, #root{

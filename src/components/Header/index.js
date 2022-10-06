@@ -12,7 +12,7 @@ export default function Header() {
       <NavLink to="/cadastrar_anime">Cadastrar Anime</NavLink>
       <DivLoginLogout>
         <NavLink to="/login">Login</NavLink>
-        <NavLink to="/cadastro">Cadastro</NavLink>
+        <NavLink to="/cadastrar">Cadastro</NavLink>
       </DivLoginLogout>
     </Nav>
   );
