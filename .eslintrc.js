@@ -18,5 +18,6 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'no-fallthrough': 'off',
+    'react/jsx-no-bind': 'off',
   },
 };
