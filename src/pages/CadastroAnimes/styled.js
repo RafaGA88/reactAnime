@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const CadastroForm = styled.form`
   display: block;
+  width: 100%;
 
   h1 {
     display: flex;

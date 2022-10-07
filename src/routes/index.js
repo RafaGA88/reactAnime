@@ -18,12 +18,8 @@ export default function Routes() {
       <MyRoute exact path="/episodio/:id" component={Episodio} />
       <MyRoute exact path="/anime/:id" component={Anime} />
       <MyRoute exact path="/login" component={Login} />
-      <MyRoute path="/cadastrar_anime" component={CadastroAnimes} isClosed />
-      <MyRoute
-        path="/cadastrar_episodio"
-        component={CadastroEpisodio}
-        isClosed
-      />
+      <MyRoute path="/cadastrar_anime" component={CadastroAnimes} />
+      <MyRoute path="/cadastrar_episodio" component={CadastroEpisodio} />
       <MyRoute path="/cadastrar" component={Cadastro} />
       <MyRoute path="*" component={Page404} />
     </Switch>

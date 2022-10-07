@@ -30,7 +30,7 @@ export default function Login() {
             </button>
             <br />
             <p>Não possui cadastro ?</p>
-            <Link to="/cadastro">Cadastre já !</Link>
+            <Link to="/cadastrar">Cadastre já !</Link>
           </form>
         </LoginForm>
       </ContainerLogin>

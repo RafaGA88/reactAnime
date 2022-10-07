@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const CadastroForm = styled.form`
+  width: 100%;
+
   h1 {
     display: flex;
     justify-content: center;
