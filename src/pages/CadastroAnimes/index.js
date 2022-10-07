@@ -53,7 +53,7 @@ export default function CadastroAnimes() {
             <option value="Ficção">Ficção</option>
             <option value="Romance">Romance</option>
             <option value="Terror">Terror</option>
-            <option value="Suspente">Suspente</option>
+            <option value="Suspense">Suspense</option>
           </select>
         </label>
         <h2>Data de Lançamento:</h2>
