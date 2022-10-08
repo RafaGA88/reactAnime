@@ -24,13 +24,14 @@ export default function CadastroEpisodio() {
   async function handleSubmit(e) {
     e.preventDefault();
 
+    const formData = new FormData();
+    formData.append('arquivo', video);
+    formData.append('anime_id', animeEp);
+    formData.append('numero_episodio', numeroEpisodio);
+    formData.append('nome', nome);
+
     try {
-      await axios.post('/cadastrar_episodio', {
-        arquivo: video,
-        anime_id: animeEp,
-        numero_episodio: numeroEpisodio,
-        nome,
-      });
+      await axios.post('/cadastrar_episodio', formData);
       const anime = animes.filter((a) => a.id === animeEp);
       toast.success(`Episódio de ${anime[0].titulo}`);
       history.push(`/anime/${animeEp}`);
@@ -50,7 +51,7 @@ export default function CadastroEpisodio() {
           <input
             type="text"
             value={nome}
-            placeholder="Digite o nome do anime..."
+            placeholder="Digite o nome do episódio..."
             onChange={(e) => setNome(e.target.value)}
           />
         </label>
@@ -76,8 +77,8 @@ export default function CadastroEpisodio() {
         <label htmlFor="video">
           <input
             type="file"
-            value={video}
-            onChange={(e) => setVideo(e.target.value)}
+            id="file"
+            onChange={(e) => setVideo(e.target.files[0])}
           />
         </label>
         <br />

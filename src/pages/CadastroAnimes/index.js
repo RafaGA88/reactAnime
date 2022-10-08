@@ -7,7 +7,7 @@ import axios from '../../services/axios';
 import history from '../../services/history';
 
 export default function CadastroAnimes() {
-  const [nome, setNome] = useState('');
+  const [titulo, setTitulo] = useState('');
   const [categoria, setCategoria] = useState('');
   const [dataLancamento, setData] = useState('');
   const [descricao, setDescricao] = useState('');
@@ -17,7 +17,7 @@ export default function CadastroAnimes() {
 
     try {
       await axios.post('/cadastrar_animes', {
-        nome,
+        titulo,
         categoria,
         data_lancamento: dataLancamento,
         descricao,
@@ -36,12 +36,12 @@ export default function CadastroAnimes() {
       <CadastroForm onSubmit={handleSubmit}>
         <h1>Cadastro de Animes</h1>
         <h2>Nome do Anime:</h2>
-        <label htmlFor="nome">
+        <label htmlFor="titulo">
           <input
             type="text"
-            value={nome}
+            value={titulo}
             placeholder="Digite o nome do anime..."
-            onChange={(e) => setNome(e.target.value)}
+            onChange={(e) => setTitulo(e.target.value)}
           />
         </label>
         <h2>Categoria:</h2>
