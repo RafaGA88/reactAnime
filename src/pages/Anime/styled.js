@@ -54,6 +54,12 @@ export const Comentario = styled.form`
 `;
 
 export const ContainerComentarios = styled.section`
+  margin-top: 100px;
+  display: block;
+`;
+
+export const ContainerComent = styled.section`
   margin-top: 40px;
+  border: 1px solid white;
   display: block;
 `;

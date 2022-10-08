@@ -4,7 +4,13 @@ import { toast } from 'react-toastify';
 import { get } from 'lodash';
 import { Container } from '../../styles/GlobalStyles';
 import axios from '../../services/axios';
-import { Comentario, ContainerEp, Title, ContainerComentarios } from './styled';
+import {
+  Comentario,
+  ContainerEp,
+  Title,
+  ContainerComentarios,
+  ContainerComent,
+} from './styled';
 import history from '../../services/history';
 
 export default function Anime() {
@@ -29,7 +35,6 @@ export default function Anime() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-
     try {
       await axios.post('/comentario', {
         rate,
@@ -94,12 +99,14 @@ export default function Anime() {
         <button type="submit">Enviar Comentario</button>
       </Comentario>
       <ContainerComentarios>
+        <h2>Comentarios sobre {anime.titulo}</h2>
         {comentarios.map((comentario) => (
-          <>
-            <span>{comentario.rate}</span>
+          <ContainerComent>
+            <br />
+            <span>Nota: {comentario.rate}</span>
             <br />
             <span>{comentario.review}</span>
-          </>
+          </ContainerComent>
         ))}
       </ContainerComentarios>
     </Container>

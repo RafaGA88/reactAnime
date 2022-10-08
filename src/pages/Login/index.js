@@ -1,36 +1,23 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import { get } from 'lodash';
 import { Title, LoginForm, ContainerLogin } from './styled';
 import { Container } from '../../styles/GlobalStyles';
-import * as userActions from '../../store/modules/user/actions';
-import axios from '../../services/axios';
-import history from '../../services/history';
+import * as actions from '../../store/modules/auth/actions';
 
-export default function Login() {
+export default function Login(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [token, setToken] = useState({});
+
+  const prevPath = get(props, 'location.state.prevPath', '/');
 
   const dispatch = useDispatch();
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    try {
-      const response = axios.post('/tokens', {
-        email,
-        password,
-      });
-      setToken(response.data.token);
-      toast.success('Login Realizado');
-      history.push('/');
-    } catch (err) {
-      const errors = get(err, 'response.data.errors', []);
-      errors.map((error) => toast.error(error));
-    }
+    dispatch(actions.loginRequest({ email, password, prevPath }));
   }
 
   return (
