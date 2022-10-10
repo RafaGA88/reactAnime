@@ -67,6 +67,7 @@ export default function Anime() {
           <h2>Episódios</h2>
           {episodios.map((episodio) => (
             <Link to={`/episodio/${episodio.id}`}>
+              <br />
               Episódio {episodio.numero_episodio} - {episodio.nome.split('"')}
             </Link>
           ))}

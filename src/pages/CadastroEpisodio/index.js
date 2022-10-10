@@ -32,8 +32,7 @@ export default function CadastroEpisodio() {
 
     try {
       await axios.post('/cadastrar_episodio', formData);
-      const anime = animes.filter((a) => a.id === animeEp);
-      toast.success(`Episódio de ${anime[0].titulo}`);
+      toast.success(`Episódio Cadastrado`);
       history.push(`/anime/${animeEp}`);
     } catch (err) {
       const errors = get(err, 'response.data.errors', []);
