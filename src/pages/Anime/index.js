@@ -66,7 +66,7 @@ export default function Anime() {
         <ContainerEp style={contStyle}>
           <h2>Episódios</h2>
           {episodios.map((episodio) => (
-            <Link to={`/episodio/${episodio.id}`}>
+            <Link key={String(episodio.id)} to={`/episodio/${episodio.id}`}>
               <br />
               Episódio {episodio.numero_episodio} - {episodio.nome.split('"')}
             </Link>
@@ -102,11 +102,11 @@ export default function Anime() {
       <ContainerComentarios>
         <h2>Comentarios sobre {anime.titulo}</h2>
         {comentarios.map((comentario) => (
-          <ContainerComent>
+          <ContainerComent key={String(comentario.id)}>
             <br />
-            <span>Nota: {comentario.rate}</span>
+            <span key={String(comentario.id + 1)}>Nota: {comentario.rate}</span>
             <br />
-            <span>{comentario.review}</span>
+            <span key={String(comentario.id + 2)}>{comentario.review}</span>
           </ContainerComent>
         ))}
       </ContainerComentarios>

@@ -32,9 +32,7 @@ export default function Cadastro() {
   return (
     <Container>
       <ContainerLogin>
-        <Title>
-          <h1>Cadastro</h1>
-        </Title>
+        <Title>Cadastro</Title>
         <LoginForm onSubmit={handleSubmit}>
           <label htmlFor="nome">
             <h2>Nome:</h2>

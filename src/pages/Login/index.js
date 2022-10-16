@@ -23,9 +23,7 @@ export default function Login(props) {
   return (
     <Container>
       <ContainerLogin>
-        <Title>
-          <h1>Login</h1>
-        </Title>
+        <Title>Login</Title>
         <LoginForm onSubmit={handleSubmit}>
           <h2>Email:</h2>
           <label htmlFor="email">

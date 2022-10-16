@@ -4,6 +4,7 @@ export const Title = styled.h1`
   color: black;
   padding-bottom: 50px;
   display: flex;
+  font-size: 35px;
   justify-content: center;
 `;
 

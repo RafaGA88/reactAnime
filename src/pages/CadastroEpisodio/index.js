@@ -68,7 +68,9 @@ export default function CadastroEpisodio() {
           <select onChange={(e) => setAnimeEp(e.target.value)}>
             <option>Anime referente ao episódio</option>
             {animes.map((anime) => (
-              <option value={anime.id}>{anime.titulo}</option>
+              <option key={String(anime.id)} value={anime.id}>
+                {anime.titulo}
+              </option>
             ))}
           </select>
         </label>
